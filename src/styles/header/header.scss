@@ -1,0 +1,110 @@
+@use '../variaveis.scss';
+
+@mixin container() {
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+header {
+    background-color: variaveis.$corPrimaria;
+    padding: 20px 0;
+
+    .container {
+        @include container();
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h1 {
+                color: variaveis.$corSecundaria;
+                font-family: variaveis.$fontTitle;
+            }
+
+            li {
+                display: inline;
+                margin-right: 15px;
+                a {
+                    color: variaveis.$corSecundaria;
+                    font-family: variaveis.$fontMain;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+.section-img {
+
+    height: 800px;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('../../images/velozes--furiosos-1499795589088_v2_1170x540.jpg') ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    .container-trailer {
+        
+        aside {
+            max-width: 650px;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 300px;
+            h2 {
+                color: variaveis.$corSecundaria;
+                font-family: variaveis.$fontTitle;
+                font-weight: 400;
+                letter-spacing: 3px;
+                font-size: 40px;
+                line-height: 50px;
+            }
+            button {
+                background-color: variaveis.$corPrimaria;
+                border: none;
+                border-radius: 15px;
+                width: 200px;
+                height: 45px;
+                margin-top: 15px;
+                a {
+                    font-family: variaveis.$fontMain;
+                    font-weight: 500;
+                    color: variaveis.$corSecundaria;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    header  {
+        padding: 15px 50px;
+    }
+
+    .section-img {
+        height: 350px;
+        .container-trailer {
+            aside {
+                max-width: 450px;
+                padding-top: 130px;
+                h2 {
+                    font-size: 26px;
+                }
+                button {
+                    width: 150px;
+                    height: 35px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        .container {
+            &_header {
+                justify-content: space-between;
+            }
+        }
+    }
+}

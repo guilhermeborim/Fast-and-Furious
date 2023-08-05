@@ -1,4 +1,18 @@
-body {
-    background-color: red;
-    color: wheat;
+@use 'variaveis.scss';
+@use '../styles/header/header.scss';
+@use '../styles/section/section.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
