@@ -37,74 +37,161 @@ header {
 }
 
 .section-img {
-
-    height: 800px;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('../../images/velozes--furiosos-1499795589088_v2_1170x540.jpg') ;
+    background-image: linear-gradient(#2d2c2c60, #2d2c2c60), url('../../../images/velozes--furiosos-1499795589088_v2_1170x540.jpg');
+    background-size: cover;
+    background-position: center top;
     background-repeat: no-repeat;
-    background-size: 100%;
+    
     .container-trailer {
-        
-        aside {
-            max-width: 650px;
-            text-align: center;
-            margin: 0 auto;
-            padding-top: 300px;
+        @include container();
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 750px;
             h2 {
-                color: variaveis.$corSecundaria;
                 font-family: variaveis.$fontTitle;
                 font-weight: 400;
-                letter-spacing: 3px;
+                letter-spacing: 2px;
+                color: variaveis.$corSecundaria;
                 font-size: 40px;
                 line-height: 50px;
+                text-align: center;
             }
             button {
                 background-color: variaveis.$corPrimaria;
                 border: none;
-                border-radius: 15px;
-                width: 200px;
-                height: 45px;
-                margin-top: 15px;
+                border-radius: 20px;
+                padding: 8px 60px;
+                margin-top: 10px;                
                 a {
+                    color: variaveis.$corSecundaria;
                     font-family: variaveis.$fontMain;
                     font-weight: 500;
-                    color: variaveis.$corSecundaria;
                     font-size: 24px;
+                    letter-spacing: 1.2px;
                 }
             }
         }
     }
 }
 
-@media (max-width: 1024px) {
-    header  {
-        padding: 15px 50px;
-    }
+.sobre-section {
+    padding-bottom: 100px;
 
-    .section-img {
-        height: 350px;
-        .container-trailer {
-            aside {
-                max-width: 450px;
-                padding-top: 130px;
-                h2 {
-                    font-size: 26px;
+    h2 {
+        font-family: variaveis.$fontTitle;
+        color: variaveis.$corPrimaria;
+        text-align: center;
+        padding: 45px 0;
+        font-size: 40px;
+        letter-spacing: 2px;
+        span {
+            color: variaveis.$corTerciaria;
+        }
+    }
+    .container {
+        @include container();
+        .sobre-grid-2 {
+            display: flex;
+            flex-direction: row-reverse;
+            padding-top: 45px;
+            img {
+                width: 480px;
+                height: 338px;
+                border-radius: 20px;
+            }
+            div {
+                padding-left: 15px;
+                .p-margin {
+                    margin-bottom: 25px;
                 }
-                button {
-                    width: 150px;
-                    height: 35px;
-                    margin-top: 5px;
+                p {
+                    font-family: variaveis.$fontMain;
+                    color: variaveis.$corPrimaria;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .sobre-grid {
+            display: flex;
+
+            img {
+                width: 560px;
+                height: 338px;
+                border-radius: 20px;
+            }
+            div {
+                padding-left: 15px;
+                .p-margin {
+                    margin-bottom: 25px;
+                }
+                p {
+                    font-family: variaveis.$fontMain;
+                    color: variaveis.$corPrimaria;
+                    font-size: 18px;
                 }
             }
         }
     }
 }
 
-@media (max-width: 700px) {
-    header {
-        .container {
-            &_header {
-                justify-content: space-between;
-            }
-        }
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 1024px max width
+
+// .section-img {
+//     background-image: url('../../../images/velozes--furiosos-1499795589088_v2_1170x540.jpg');
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     .container-trailer {
+//         div {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             justify-content: center;
+//             height: 400px;
+//             h2 {
+//                 font-family: variaveis.$fontTitle;
+//                 font-weight: 400;
+//                 letter-spacing: 2px;
+//                 color: variaveis.$corSecundaria;
+//                 font-size: 36px;
+//                 text-align: center;
+//             }
+//             button {
+//                 background-color: variaveis.$corPrimaria;
+//                 border: none;
+//                 border-radius: 15px;
+//                 padding: 5px 25px;
+//                 margin-top: 10px;                
+//                 a {
+//                     color: variaveis.$corSecundaria;
+//                     font-family: variaveis.$fontMain;
+//                     font-weight: 500;
+//                     font-size: 22px;
+//                     letter-spacing: 1.2px;
+//                 }
+//             }
+//         }
+//     }
+// }
