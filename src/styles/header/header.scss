@@ -1,197 +1,408 @@
 @use '../variaveis.scss';
 
 @mixin container() {
-    max-width: 1040px;
+    max-width: 660px;
     width: 100%;
     margin: 0 auto;
 }
 
+@mixin containerCel() {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+}
 
+@mixin containerDesktop() {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
 header {
     background-color: variaveis.$corPrimaria;
-    padding: 20px 0;
-
     .container {
-        @include container();
+        @include containerCel();
 
-        &__header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .container__header {
             h1 {
-                color: variaveis.$corSecundaria;
+                text-align: center;
+                padding: 35px 0;
                 font-family: variaveis.$fontTitle;
+                color: variaveis.$corSecundaria;
+                letter-spacing: 1.2px;
+                font-weight: 400;
             }
+            nav {
+                ul {
+                    text-align: center;
+                    li {
+                        display: inline;
+                        a {
+                            color: variaveis.$corSecundaria;
+                            font-family: variaveis.$fontMain;
+                            font-size: 20px;
+                        }
 
-            li {
-                display: inline;
-                margin-right: 15px;
-                a {
-                    color: variaveis.$corSecundaria;
-                    font-family: variaveis.$fontMain;
-                    font-weight: 400;
+                        &:not(:last-child) {
+                        margin-right: 24px;
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-.section-img {
-    background-image: linear-gradient(#2d2c2c60, #2d2c2c60), url('../../../images/velozes--furiosos-1499795589088_v2_1170x540.jpg');
+.bg-trailer {
+    background-image: linear-gradient(#00000071, #00000071),
+    url('../../../images/velozes--furiosos-1499795589088_v2_1170x540.jpg');
+    height: 250px;
     background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    
-    .container-trailer {
-        @include container();
-        div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 750px;
+    background-position: center center;
+    background-repeat: no-repeat ;
+    display: flex;
+    align-items: center;
+    .container {
+        @include containerCel();
+        .trailer {
+            text-align: center;
             h2 {
+                color: variaveis.$corSecundaria;
+                font-size: 28px;
                 font-family: variaveis.$fontTitle;
                 font-weight: 400;
-                letter-spacing: 2px;
-                color: variaveis.$corSecundaria;
-                font-size: 40px;
-                line-height: 50px;
-                text-align: center;
             }
             button {
                 background-color: variaveis.$corPrimaria;
+                font-family: variaveis.$fontMain;
+                font-weight: 400;
                 border: none;
                 border-radius: 20px;
-                padding: 8px 60px;
-                margin-top: 10px;                
-                a {
-                    color: variaveis.$corSecundaria;
-                    font-family: variaveis.$fontMain;
-                    font-weight: 500;
-                    font-size: 24px;
-                    letter-spacing: 1.2px;
-                }
+                width: 100px;
+                height: 30px;
+                color: variaveis.$corSecundaria;
+                font-size: 20px;
+                margin-top: 10px;
             }
         }
     }
 }
 
-.sobre-section {
-    padding-bottom: 100px;
-
+.section-sobre {
+    img {
+        max-width: 100%;
+    }
     h2 {
-        font-family: variaveis.$fontTitle;
         color: variaveis.$corPrimaria;
+        font-size: 28px;
+        font-family: variaveis.$fontTitle;
+        font-weight: 400;
         text-align: center;
-        padding: 45px 0;
-        font-size: 40px;
-        letter-spacing: 2px;
+        padding: 20px 0;
         span {
             color: variaveis.$corTerciaria;
         }
     }
     .container {
-        @include container();
-        .sobre-grid-2 {
-            display: flex;
-            flex-direction: row-reverse;
-            padding-top: 45px;
-            img {
-                width: 480px;
-                height: 338px;
-                border-radius: 20px;
-            }
-            div {
-                padding-left: 15px;
-                .p-margin {
-                    margin-bottom: 25px;
-                }
-                p {
-                    font-family: variaveis.$fontMain;
-                    color: variaveis.$corPrimaria;
-                    font-size: 18px;
-                }
+        @include containerCel();
+        .sobre {
+            p {
+                font-family: variaveis.$fontMain;
+                color: variaveis.$corPrimaria;
+                text-align: center;
+                padding: 15px 0;
+                font-size: 20px;
             }
         }
+    }
+}
 
-        .sobre-grid {
-            display: flex;
-
+.section-atores {
+    background-color: variaveis.$corPrimaria;
+    .container {
+        @include containerCel();
+        h2 {
+            color: variaveis.$corSecundaria;
+            font-size: 28px;
+            font-family: variaveis.$fontTitle;
+            font-weight: 400;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h3 {
+            font-family: variaveis.$fontMain;
+            color: variaveis.$corSecundaria;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            span {
+                color: variaveis.$corTerciaria;
+            }
+        }
+        .atores {
+            padding-top: 20px;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(2, 49.5%);
             img {
-                width: 560px;
-                height: 338px;
+                width: 165px;
+                margin-bottom: 20px;
                 border-radius: 20px;
             }
+        }
+    }
+}
+
+.galeria {
+    .container {
+        @include containerCel();
+        h2 {
+            color: variaveis.$corPrimaria;
+            font-size: 28px;
+            font-family: variaveis.$fontTitle;
+            font-weight: 400;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .galeria-fotos {
+            padding-bottom: 25px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: variaveis.$corPrimaria;
+    padding: 20px 0;
+    .container {
+        @include containerCel();
+        .footer-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                color: variaveis.$corSecundaria;
+                font-family: variaveis.$fontMain;
+                font-size: 15px;
+            }
             div {
-                padding-left: 15px;
-                .p-margin {
-                    margin-bottom: 25px;
-                }
-                p {
-                    font-family: variaveis.$fontMain;
-                    color: variaveis.$corPrimaria;
-                    font-size: 18px;
+                img {
+                    width: 40px;
+                    margin-left: 20px;
                 }
             }
         }
     }
 }
 
+@media screen and (min-width: variaveis.$tablet) {
+    header {
+        .container {
+            @include container();
+            .container__header {
+                h1 {
+                    font-size: 40px;
+                }
+                nav {
+                    ul {
+                        li {
+                            a {
+                                font-size: 25px;
+                            }
+                            &:not(:last-child) {
+                                margin-right: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bg-trailer {
+        height: 500px;
+        .container {
+            @include container();
+            .trailer {
+                h2 {
+                    font-size: 36px;
+                }
+                button {
+                    width: 150px;
+                    height: 45px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+    .section-sobre {
+        h2 {
+            font-size: 36px;
+        }
+        .container {
+            @include container();
+            .sobre {
+                p {
+                    padding: 20px 0;
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    .section-atores {
+        .container {
+            @include container();
+            h2 {
+                font-size: 36px;
+                padding: 25px 0;
+            }
+            h3 {
+                font-size: 26px;
+            }
+            .atores {
+                padding-top: 26px;
+                display: grid;
+                justify-items: center;
+                grid-template-columns: repeat(3, 33.5%);
+                img {
+                    width: 200px;
+                }
+            }
+        }
+    }
+    .galeria {
+        .container {
+            @include container();
+            h2 {
+                font-size: 36px;
+                padding: 25px 0;
+            }
+        }
+    }
+    footer {
+        padding: 20px 0;
+        .container {
+            @include container();
+            .footer-title {
+                p {
+                    font-size: 20px;
+                }
+                div {
+                    img {
+                        width: 45px;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
 
+@media screen and (min-width: variaveis.$desktop) {
+    header {
+        .container {
+            @include containerDesktop();
+            .container__header {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+                h1 {
+                    font-size: 42px;
+                }
+                nav {
+                    ul {
+                        li {
+                            a {
+                                font-size: 20px;
+                            }
+                            &:not(:last-child) {
+                                margin-right: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bg-trailer {
+        height: 800px;
+        .container {
+            @include containerDesktop();
+            .trailer {
+                h2 {
+                    font-size: 40px;
+                }
+                button {
+                    width: 150px;
+                    height: 45px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+    .section-sobre {
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+        h2 {
+            font-size: 40px;
+        }
+        .container {
+            @include containerDesktop();
+            .sobre {
+                p {
+                    font-size: 28px;
+                    padding: 25px 0;
+                }
+            }
+        }
+    }
+    .section-atores {
+        .container {
+            @include containerDesktop();
+            h2 {
+                font-size: 40px;
+                padding: 25px 0;
+            }
+            h3 {
+                font-size: 34px;
+            }
+            .atores {
+                padding: 35px 0;
+                grid-template-columns: repeat(4, 23.5%);
+                img {
+                    width: 300px;
+                }
+            }
+        }
+    }
+    .galeria {
+        .container {
+            @include containerDesktop();
+            h2 {
+                font-size: 40px;
+                padding: 25px 0;
+            }
+        }
+    }
+    footer {
+        padding: 20px 0;
+        .container {
+            @include containerDesktop();
+            .footer-title {
+                p {
+                    font-size: 20px;
+                }
+                div {
+                    img {
+                        width: 45px;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 1024px max width
-
-// .section-img {
-//     background-image: url('../../../images/velozes--furiosos-1499795589088_v2_1170x540.jpg');
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     .container-trailer {
-//         div {
-//             display: flex;
-//             flex-direction: column;
-//             align-items: center;
-//             justify-content: center;
-//             height: 400px;
-//             h2 {
-//                 font-family: variaveis.$fontTitle;
-//                 font-weight: 400;
-//                 letter-spacing: 2px;
-//                 color: variaveis.$corSecundaria;
-//                 font-size: 36px;
-//                 text-align: center;
-//             }
-//             button {
-//                 background-color: variaveis.$corPrimaria;
-//                 border: none;
-//                 border-radius: 15px;
-//                 padding: 5px 25px;
-//                 margin-top: 10px;                
-//                 a {
-//                     color: variaveis.$corSecundaria;
-//                     font-family: variaveis.$fontMain;
-//                     font-weight: 500;
-//                     font-size: 22px;
-//                     letter-spacing: 1.2px;
-//                 }
-//             }
-//         }
-//     }
-// }
