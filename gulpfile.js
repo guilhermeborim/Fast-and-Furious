@@ -14,7 +14,8 @@ function comprimeImagens() {
         .pipe(gulp.dest('./dist/images'));
 }
 
-exports.default = function() {
+exports.default = gulp.parallel(styles, comprimeImagens);
+exports.watch = function() {
     gulp.watch('./src/styles/**/*.scss', {ignoreInitial: false}, gulp.series(styles));
     gulp.watch('./images/*', {ignoreInitial: false}, gulp.series(comprimeImagens));
 } 
