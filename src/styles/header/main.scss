@@ -1,6 +1,5 @@
-@use 'variaveis.scss';
-@use '../styles/header/header.scss';
-@use '../styles/section/section.scss';
+@use './variaveis.scss';
+@use './header.scss';
 
 * {
     margin: 0;
