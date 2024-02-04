@@ -15,5 +15,8 @@
     "gulp-sass": "^5.1.0",
     "imagemin": "^8.0.1",
     "sass": "^1.64.2"
+  },
+  "dependencies": {
+    "commitizen": "^4.3.0"
   }
 }
